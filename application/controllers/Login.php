@@ -7,6 +7,7 @@ class Login extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('M_users');
+
 	}
 
 	public function index()
@@ -48,12 +49,6 @@ class Login extends CI_Controller {
 			redirect(Login);
 		}
 
-	}
-
-	public function resSes()
-	{
-		$this->session->sess_destroy();
-		$this->load->view('login');
 	}
 
 	public function directPath($userRole) 

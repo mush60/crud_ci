@@ -11,7 +11,8 @@
 	<div id="wrapper">
 		<!-- here sidebar -->
 		<?php
-			$this->load->view('layout/navbar');
+			$data['username'] = $this->session->userdata('username');
+			$this->load->view('layout/navbar', $data);
 		?>
 		<!-- END NAVBAR -->
 		<!-- here sidebar -->
