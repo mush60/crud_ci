@@ -17,6 +17,13 @@ class M_users extends CI_Model {
 		return $res->username;
 	}
 
+	public function getUserRole($data)
+	{
+		$res = $this->db->get_where($this->table, $data)->first_row();
+
+		return $res->role;
+	}
+
 }
 
 /* End of file M_users.php */
