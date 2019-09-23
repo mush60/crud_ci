@@ -7,18 +7,18 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<!-- VENDOR CSS -->
-	<link rel="stylesheet" href="public/css/bootstrap.min.css">
-	<link rel="stylesheet" href="public/vendor/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="public/vendor/linearicons/style.css">
+	<link rel="stylesheet" href="<?= base_url();?>public/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?= base_url();?>public/vendor/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="<?= base_url();?>public/vendor/linearicons/style.css">
 	<!-- MAIN CSS -->
-	<link rel="stylesheet" href="public/css/main.css">
+	<link rel="stylesheet" href="<?= base_url();?>public/css/main.css">
 	<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
-	<link rel="stylesheet" href="public/css/demo.css">
+	<link rel="stylesheet" href="<?= base_url();?>public/css/demo.css">
 	<!-- GOOGLE FONTS -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 	<!-- ICONS -->
-	<link rel="apple-touch-icon" sizes="76x76" href="public/img/apple-icon.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="public/img/favicon.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="<?= base_url();?>public/img/apple-icon.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="<?= base_url();?>public/img/favicon.png">
 </head>
 
 <body>
@@ -30,13 +30,22 @@
 					<div class="left">
 						<div class="content">
 							<div class="header">
-								<div class="logo text-center"><img src="public/img/logo-dark.png" alt="Klorofil Logo"></div>
+								<div class="logo text-center"><img src="<?= base_url();?>public/img/logo-dark.png" alt="Klorofil Logo"></div>
 								<p class="lead">Login to your account</p>
 							</div>
+							<?php
+							if($this->session->flashdata('login') == "fail"){
+								?>
+								<div class="alert alert-danger alert-dismissible" style="padding:8px;" role="alert">
+									Failed to login, email or password wrong!!
+									</div>
+								<?php
+							}
+							?>
 							<form class="form-auth-small" action="<?= base_url('login/auth')?>" method="post">
 								<div class="form-group">
 									<label for="signin-email" class="control-label sr-only">Email</label>
-									<input name="email" type="email" class="form-control" id="signin-email" value="" placeholder="john@example.com">
+									<input name="email" type="email" class="form-control danger" id="signin-email" value="" placeholder="john@example.com">
 								</div>
 								<div class="form-group">
 									<label for="signin-password" class="control-label sr-only">Password</label>
