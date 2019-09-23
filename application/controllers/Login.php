@@ -34,7 +34,8 @@ class Login extends CI_Controller {
 			$data_session = array(
 				'email' => $data['email'],
 				'role' => $role,
-				'username' => $username
+				'username' => $username,
+				'user_status' => 'online'
 			);
 			
 			$this->session->set_userdata($data_session);
@@ -58,7 +59,7 @@ class Login extends CI_Controller {
 	public function directPath($userRole) 
 	{
 		if($userRole == 0) {
-			//redirect('dashboard','refresh');
+			redirect('dashboard','refresh');
 		}
 	}
 }
