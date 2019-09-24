@@ -18,7 +18,9 @@
 		<!-- here sidebar -->
 		<?php
 
-			$this->load->view('layout/sidebar');
+			$data = array('sidemenu' => $smenu );
+
+			$this->load->view('layout/sidebar', $data['sidemenu']);
 
 		?>
 

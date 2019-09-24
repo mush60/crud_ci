@@ -2,6 +2,13 @@
 			<div class="sidebar-scroll">
 				<nav>
 					<ul class="nav">
+						<?php
+						foreach ($sidemenu as $smenu) {
+						?>
+						<li><a href="<?= $smenu->link_menu;?>" class="<?php ?>"><i class="lnr lnr-home<?php ?>"></i> <span><?= $smenu->nama_menu;?></span></a></li>
+						<?php
+						}
+						?>
 						<li><a href="index.html" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
 						<li><a href="elements.html" class="active"><i class="lnr lnr-code"></i> <span>Elements</span></a></li>
 						<li><a href="charts.html" class=""><i class="lnr lnr-chart-bars"></i> <span>Charts</span></a></li>
